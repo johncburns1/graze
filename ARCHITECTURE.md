@@ -4,7 +4,7 @@
 
 Graze is a CLI tool that learns dining preferences and provides personalized restaurant/bar recommendations.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                       CLI Interface                          │
 └────────────┬────────────────────────────────┬───────────────┘

@@ -58,6 +58,7 @@ uv run pre-commit run --all-files  # Run hooks manually
 ## Development Philosophy
 
 **Simplicity First**: This project values simple solutions to complex problems. Less code is better. Only add complexity when it's truly needed. Prefer:
+
 - Direct, straightforward implementations over clever abstractions
 - Fewer lines of code over elaborate patterns
 - Built-in Python features over external dependencies
@@ -96,6 +97,7 @@ This project follows a **test-driven development (TDD)** approach for core produ
 ### Test Organization
 
 Use industry-standard pytest organization:
+
 - `tests/` directory mirrors `src/graze/` structure
 - `tests/test_foo.py` tests `src/graze/foo.py`
 - Group related tests in classes when helpful
@@ -104,12 +106,14 @@ Use industry-standard pytest organization:
 ### Test Types
 
 **Unit Tests** (primary focus):
+
 - Test single, modular functions in isolation
 - Mock external dependencies (APIs, file I/O, etc.)
 - Fast execution, no network calls
 - Use pytest fixtures for test data and mocks
 
 **Integration Tests** (broader scope):
+
 - Test multiple components working together
 - Can hit real APIs (Yelp, LLM providers)
 - Slower, more comprehensive

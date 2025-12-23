@@ -128,12 +128,28 @@ Use industry-standard pytest organization:
 
 ## Code Architecture
 
+### Hexagonal Architecture with Domain-Driven Design
+
+This project uses **hexagonal architecture** (Ports and Adapters) combined with **Domain-Driven Design** patterns:
+
+- **Domain models** represent business entities and logic, kept pure and framework-agnostic
+- **Ports** define interfaces between domain and external systems
+- **Adapters** implement ports for specific technologies (databases, APIs, etc.)
+- **Repositories** handle persistence, translating between domain models and database models
+- **Dependencies point inward**: domain code depends only on interfaces, never on implementations
+
+Domain models are never persisted directly. Repository adapters contain separate persistence models and handle translation.
+
 ### Project Structure
 
 - `src/graze/` - Main package source code
+  - `domain/` - Domain models and business logic
+  - `ports/` - Interface definitions
+  - `adapters/` - Concrete implementations
+  - `application/` - Use cases and application services
   - `__init__.py` - Package initialization and version
   - `__main__.py` - CLI entry point (invokable via `graze` command)
-- `tests/` - Test suite
+- `tests/` - Test suite (mirrors src structure)
 - `pyproject.toml` - Project configuration and dependencies
 
 ### Type Annotations
